@@ -1,0 +1,18 @@
+class Solution {
+    public boolean canPlaceFlowers(int[] flowerbed, int n) {
+        int count=0; //check how many flower we plant
+        for(int i=0; i<flowerbed.length; i++){ //this loop go through each plot to check (i =flowerbed)plant a flower in current position 
+          if(flowerbed[i]==0){  //if plot is empty then we check that ,plant a flower or not
+            int prev=(i==0 || flowerbed[i-1]==0)?0:1; //checking prev plot from starting
+            int next=(i==flowerbed.length-1||flowerbed[i+1]==0)?0:1; //
+            if(prev==0 && next==0){//if next or prev is empty then we plant a flower
+                flowerbed[i]=1; // now empty plot is not empty =1
+                count++; //count =1
+
+            }
+
+          }  
+        }
+        return count>=n; //if we plant 1 flower so return true  otherwise false
+    }
+}

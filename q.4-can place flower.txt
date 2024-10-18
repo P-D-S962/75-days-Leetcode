@@ -8,11 +8,12 @@ class Solution {
             if(prev==0 && next==0){//if next or prev is empty then we plant a flower
                 flowerbed[i]=1; // now empty plot is not empty =1
                 count++; //count =1
-
-            }
-
-          }  
+} 
         }
-        return count>=n; //if we plant 1 flower so return true  otherwise false
+        if( count>=n) {
+        return true;//if we plant 1 flower so return true  otherwise false
     }
+}
+return false;
+}
 }
